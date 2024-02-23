@@ -1,0 +1,372 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background-color: #ebf2f5;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+}
+
+header {
+    width: 18vw;
+    min-width: 180px;
+    height: 100vh;
+    background-color: #4D6F80;
+    padding: 30px 22px;
+    position: fixed;
+    border-radius: 0 30px 30px 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    width: 100vw;
+    /* calcula a largura do header (20% da vw ou no minnimo 180px) e soma 20px pra centralizar */
+    margin-left: calc(max(20vw, 180px) + 100px);
+    margin-right: 100px;
+    height: fit-content;
+    max-height: 100vh;
+    overflow: auto;
+    scrollbar-color: #ccc;
+    scrollbar-width: thin;
+}
+
+header .head {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 20px;
+    /* border-bottom: 1px solid #f6f6f6; */
+}
+
+.user-img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-img img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.user-details .title {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    color: #ffffff91;
+    padding-bottom: 5px;
+}
+
+
+.user-details .name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.sidebar {
+    height: 100%;
+    max-height: 100%;
+}
+
+.sidebar .title {
+    font-size: 10px;
+    font-weight: 500;
+    color: #ffffff91;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.sidebar ul {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff91;
+    text-decoration: none;
+    padding: 12px 8px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.sidebar ul li:hover a,
+.sidebar ul li.active a{
+    color: #fff;
+    background-color: #ffffff1c;
+}
+
+.logout-item {
+    flex: 1;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.main{
+    width: 100%;
+    margin-left: 180px;
+}
+
+/* cadastro */
+
+main h1 {
+    width: fit-content;
+    color: #8FA7B2;
+    margin: 30px auto;
+    /* margin-top: 40px; */
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+form {
+    /* width: 700px; */
+    margin: 0px auto;
+    height: fit-content;
+    padding: 40px 60px;
+    background: #fff;
+    /* border: 1px solid #D3E2E5; */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+form fieldset, .info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+form fieldset {
+    border: 0;
+}
+
+form fieldset legend, dialog h2 {
+    width: fit-content;
+    color: #4D6F80;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 28px;
+}
+
+/* form .input + .input {
+    margin-top: 24px;
+} */
+
+form .input label, .info-item .input label {
+    display: flex;
+    color: #8FA7B2;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+form .input input, .info-item .input input {
+    width: 100%;
+    background: #F5F8FA;
+    border: 1px solid #D3E2E5;
+    border-radius: 8px;
+    height: 50px;
+    padding: 0 16px;
+    color: #5C8599;
+    font-size: 14px;
+    outline-color: #A1E9C5;
+}
+
+form .input input::placeholder, .info-item .input input::placeholder {
+    color: #5C8599;
+    font-size: 14px;
+}
+
+.numbers {
+    width: 100%;
+    display: flex;
+    gap: 24px;
+}
+/* 
+.numbers .input + .input {
+    margin-top: 0px;
+    margin-left: 28px
+} */
+
+form button, dialog .info-item button{
+    width: 100%;
+    background: #37C77F;
+    border: none;
+    border-radius: 8px;
+    color: #FFFFFF;
+    height: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 24px;
+}
+
+dialog .info-item button{
+    margin-top: 0px;
+}
+
+form button:hover , dialog .info-item button:hover{
+    background: #3EE08F;
+    transition: background-color 0.8s;
+}
+
+/* index */
+
+.img-logo {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    /* margin-top: 10vh; */
+}
+
+/* login */
+
+.login {
+    margin: auto;
+    width: 45vw;
+}
+
+.remember-me {
+    font-size: 14px;
+    width: 100%;
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.remember-me label {
+    color: #8FA7B2;
+}
+
+.remember-me a {
+    color: rgb(26,115,232);
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.5s color;
+}
+
+.remember-me a:hover {
+    color: rgb(23,78,166);
+}
+
+input[type=checkbox]:before {
+    border: none;
+}
+
+.new-account {
+    margin-top: 12px;
+}
+
+.new-account p {
+    font-size: 14px;
+    color: #8FA7B2;
+}
+
+.new-account p a {
+    color: rgb(26,115,232);
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.5s color;
+}
+
+.new-account p a:hover {
+    color: rgb(23,78,166);
+}
+
+/* listagem */
+
+table {
+    width: 100%;
+    margin: 0px auto;
+    height: fit-content;
+    padding: 40px 60px;
+    background: #fff;
+    text-align: left;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
+    border-radius: 30px;
+    border-spacing: 0 14px;
+    color: #5C8599;
+    font-size: 14px;
+}
+
+table thead th {
+    color: #4D6F80;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0 8px 14px 8px;
+}
+
+table tbody tr {
+    background: #F5F8FA;
+    height: 50px;
+}
+
+/* table tbody tr:hover {
+    background-color: #4d6f802c;
+} */
+
+table tbody td {
+    padding: 8px;
+}
+
+.button{
+    background: #37C77F;
+    padding: 0;
+    width: 40px;
+}
+
+.button button {
+    background: #37C77F;
+    border: none;
+    color: #FFFFFF;
+    width: 100%;
+    min-width: 25px;
+    height: 100%;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.button button:hover {
+    background: #3EE08F;
+}
+
+.button .trash {
+    background: #e03e3e;
+}
+
+.button .trash:hover {
+    background-color: #f84949;
+}
+
+dialog {
+    border: none;
+    margin: auto;
+    width: 50vw;
+    height: fit-content;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
+}
+
+dialog::backdrop {
+    background-color: rgba(0,0,0,.5)
+}
